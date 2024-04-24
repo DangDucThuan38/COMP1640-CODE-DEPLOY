@@ -1,0 +1,55 @@
+.navbar {
+  height: 50px;
+  border-bottom: 0.5px solid #8a8888;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+
+  .wrapper {
+    top: 3.3%;
+    width: 100%;
+    padding: 10px; 
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    
+
+    .search {
+      display: flex;
+      align-items: center;
+      border: 0.5px solid lightgray;
+      padding: 3px;
+
+      input {
+        border: none;
+        outline: none;
+        background: transparent;
+
+        &::placeholder {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .items {
+      display: flex;
+  align-items: center;
+
+      .item {
+        margin-left: 10px; /* Add some space between items */
+  display: flex;
+  align-items: center;
+
+        .icon {
+          margin-right: 5px;         }
+
+        .avatar {
+          width: 30px;
+  height: 30px;
+  border-radius: 50%;
+        }
+      }
+    }
+  }
+}
