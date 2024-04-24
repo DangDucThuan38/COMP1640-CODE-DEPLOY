@@ -6,7 +6,7 @@ import DateTime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 
 const EditCampaign = ({ title }) => {
-  const [text, setText] = useState('Initial text');
+  const [setText] = useState('Initial text');
 
   const handleTextChange = (event) => {
     setText(event.target.value);

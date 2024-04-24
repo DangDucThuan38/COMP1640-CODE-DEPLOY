@@ -9,7 +9,7 @@ import Select from "react-select";
 import toast, { Toaster } from 'react-hot-toast';
 
 
-const New = ({ }) => {
+const New = () => {
   const showToastMessageSuccess = (mesage) => {
     toast.success(mesage, {
       position: "top-right",
@@ -43,7 +43,6 @@ const New = ({ }) => {
     { value: true, label: "Male" },
     { value: false, label: "Female" }
   ];
-  const [selectedUser, setSelectedUser] = useState([]);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -54,37 +53,11 @@ const New = ({ }) => {
   const [faculty, setFaculty] = useState(facultyOptions[0].value);
   const [role, setRole] = useState(roleOptions[0].value);
 
-  const handleDateChange = (date) => {
-    setDob(date);
-  };
-  const handleChange = (e) => {
-    setSelectedUser({
-      ...selectedUser,
-      [e.target.name]: e.target.value,
-    });
-    // data[e.target.name] = e.target.value;
-  };
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-    // Handle form submission
-    console.log("Add user data:", selectedUser);
-  };
+ 
+  
 
-  const roleChangeHandler = (event) => {
-    setRole(event.target.value);
-    console.log(
-      "User Selected Value - ",
-      event.target.value
-    );
-  };
 
-  const facultyChangeHandler = (event) => {
-    setFaculty(event.target.value);
-    console.log(
-      "User Selected Value - ",
-      event.target.value
-    );
-  };
+
 
   const submitForm = async (e) => {
     e.preventDefault();

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import 'tippy.js/dist/tippy.css'; // optional
 import { useState } from "react";
 import eventApi from "../../api/eventApi";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 export default function CardEvent({ event, handleReload }) {
   console.log('event', event)

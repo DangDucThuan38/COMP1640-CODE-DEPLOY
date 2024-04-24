@@ -22,10 +22,7 @@ const userApi = {
         const url = `/users/${userId}`;
         return axiosClient.get(url);
     },
-    putUserUpdate: () => {
-        const url = 'users/update';
-        return axiosClient.put();
-    },
+  
     forgotPassword: (email) => {
         return axios({
             method: 'post',

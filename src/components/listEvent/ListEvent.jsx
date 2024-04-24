@@ -1,4 +1,4 @@
-import Post from "../post/Post";
+
 import "./listEvent.css";
 import CardEvent from "../cardEvent/CardEvent";
 import { useEffect, useState } from "react";

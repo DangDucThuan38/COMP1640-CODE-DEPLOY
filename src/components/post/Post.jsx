@@ -1,14 +1,13 @@
 import "./post.css";
 import { MoreVert } from "@material-ui/icons";
 import Comments from "../comments/Comments";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import contributionApi from "../../api/contributionApi";
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 export default function Post({ post, eventId, handleToggleReloadContribution }) {
   const [commentOpen, setCommentOpen] = useState(false);
-  const [like, setLike] = useState(post.like);
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };

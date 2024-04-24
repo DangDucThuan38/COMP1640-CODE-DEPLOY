@@ -1,4 +1,3 @@
-import axiosClient from "./apiClient";
 import apiClient from "./apiClient";
 
 const commentApi = {

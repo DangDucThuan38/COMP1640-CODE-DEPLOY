@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./edit.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import { useParams } from "react-router-dom";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import axios from 'axios';
 
@@ -13,7 +12,7 @@ const Edit = () => {
   const [file, setFile] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
 
-  const { id } = useParams();
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
