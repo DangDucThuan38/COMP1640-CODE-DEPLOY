@@ -60,24 +60,8 @@ function Datatable() {
               <td>{user.account_status ? 'Active' : 'Inactive'}</td>
               <td>{user.faculty}</td>
               <td>{user.role}</td>
-              <td>
-                <select 
-                    value={user.account_status ? 'Active' : 'Inactive'} 
-                    onChange={(e) => {
-                      console.log('Selected value:', e.target.value);
-                      handleStatusChange(user._id, e.target.value === 'Active');
-                    }}
-                    style={{ color: user.account_status ? 'green' : 'red' }}
-                  >
-                    <option value="Active">Active</option>
-                    <option value="Inactive">Inactive</option>
-                  </select>
-                </td>
-                <td>
-                  <button className="edit-button" onClick={() => handleEdit(user._id)}>
-                    Edit
-                  </button>
-                </td>
+             
+               
             </tr>
           ))}
         </tbody>

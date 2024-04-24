@@ -60,9 +60,7 @@ const TableCampaign = () => {
               <td>{formatDateTime(event.last_update)}</td>
               <td>{event.create_by.full_name}</td>
               <td>{event.description}</td>
-              <button className="edit-button" onClick={() => handleEdit(user._id)}>
-                    Edit
-                  </button>
+          
             </tr>
           ))}
         </tbody>
