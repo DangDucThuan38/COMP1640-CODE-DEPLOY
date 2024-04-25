@@ -29,7 +29,6 @@ const TableCampaign = () => {
     <div className="datatable-container">
       <h1>Event Data</h1>
       <div className="datatableTitle">
-        Add New Event
         <Link to="/event/newevent" className="link">
           Add New
         </Link>

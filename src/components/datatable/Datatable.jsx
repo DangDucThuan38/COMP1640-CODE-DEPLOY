@@ -28,7 +28,6 @@ function Datatable() {
     <div className="datatable-container">
       <h1>User Data</h1>
       <div className="datatableTitle">
-        Add New User
         <Link to="/users/new" className="link">
           Add New
         </Link>
@@ -44,8 +43,8 @@ function Datatable() {
             <th>Account Status</th>
             <th>Faculty</th>
             <th>Role</th>
-            <th>Status</th>
-              <th>Action</th> 
+            {/* <th>Status</th>
+              <th>Action</th>  */}
           </tr>
         </thead>
         <tbody>
