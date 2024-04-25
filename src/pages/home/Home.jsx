@@ -1,8 +1,10 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import "./home.css";
+import Widget from "../../components/widget/Widget";
 import reportApi from '../../api/report'
 import { useEffect, useState } from "react";
+
 const Home = () => {
   const [data, setData] = useState({})
   useEffect(() => {
@@ -21,7 +23,10 @@ const Home = () => {
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
-        <div className="card_1">
+        <div className="widgets">
+          <Widget type="user" amount={data.user_count} />
+        </div>
+        <div className="card margin-bottom-m">
           <h3>Top contribution có lượt like cao nhất</h3>
           <div>
             <table>
@@ -31,9 +36,9 @@ const Home = () => {
                 <th>Số lượt like</th>
               </tr>
               {
-                data?.top_liked_contributions?.map(item => {
+                data?.top_liked_contributions?.map((item,index) => {
                   return (
-                    <tr>
+                    <tr key={index}>
                       <td>{item.event}</td>
                       <td>{item.contributor}</td>
                       <td>{item.like_count}</td>
@@ -46,7 +51,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card_2">
+        <div className="card margin-bottom-m">
           <h3>Top contribution có lượt dislike cao nhất</h3>
           <div>
             <table>
@@ -56,9 +61,9 @@ const Home = () => {
                 <th>Số lượt dislike</th>
               </tr>
               {
-                data?.top_disliked_contributions?.map(item => {
+                data?.top_disliked_contributions?.map((item, index) => {
                   return (
-                    <tr>
+                    <tr key={index}>
                       <td>{item.event}</td>
                       <td>{item.contributor}</td>
                       <td>{item.dislike_count}</td>
@@ -72,7 +77,7 @@ const Home = () => {
         </div>
 
 
-        <div className="card_3">
+        <div className="card">
           <h3>Xếp hạng event</h3>
           <div>
             <table>
@@ -81,9 +86,9 @@ const Home = () => {
                 <th>Contribution</th>
               </tr>
               {
-                data?.top_events?.map(item => {
+                data?.top_events?.map((item, index) => {
                   return (
-                    <tr>
+                    <tr key={index}>
                       <td>{item.name}</td>
                       <td>{item.contribution_count}</td>
                     </tr>

@@ -2,7 +2,7 @@ import apiClient from "./apiClient";
 
 const reportApi = {
     get: () => {
-        const url = 'reports';
+        const url = 'reports/';
         return apiClient.get(url);
     },
     // create: (data) => {

@@ -1,0 +1,42 @@
+.widget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    font-size: 40px;
+    margin-right: 10px;
+    color: crimson;
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.counter {
+    font-size: 18px;
+    margin-left: 10px;
+    color: #555;
+}
+
+.link {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}

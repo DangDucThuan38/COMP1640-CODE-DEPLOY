@@ -14,7 +14,6 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import "./style/dark.css";
 import EditCampaign from "./pages/editCampaign/EditCampaign";
-import ViewDetailCampaign from "./pages/viewDetailCampaign/ViewDetailCampaign";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -52,14 +51,12 @@ function App() {
             <Route path="campaigns">
               <Route index element={<ListCampaign />} />
               <Route path="edit/:id" element={<EditCampaign />} />
-              <Route path="view/:campaignId" element={<ViewDetailCampaign />} />
   
             </Route>
 
             <Route path="contribution">
               <Route index element={<ListCampaign />} />
               <Route path="edit/:id" element={<EditCampaign />} />
-              <Route path="view/:campaignId" element={<ViewDetailCampaign />} />
             </Route>
 
           </Route>
