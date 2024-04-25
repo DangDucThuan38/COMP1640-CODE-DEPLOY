@@ -1,34 +1,55 @@
 import "./share.css";
 import React, { useState } from 'react';
-import contributionApi from '../../api/contributionApi'
+import contributionApi from '../../api/contributionApi';
 
 export default function Share({ eventId, handleToggleReloadContribution }) {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [content, setContent] = useState("")
+  const [content, setContent] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    console.log('file', file)
     setSelectedFile(file);
   };
 
   const handleUpload = () => {
-    const handler = async () => {
-      const bodyFormData = new FormData();
+    if (isChecked) {
+      const handler = async () => {
+        const bodyFormData = new FormData();
 
-      bodyFormData.append('content', content)
-      bodyFormData.append('event', eventId)
-      bodyFormData.append('documents', selectedFile)
+        bodyFormData.append('content', content);
+        bodyFormData.append('event', eventId);
+        bodyFormData.append('documents', selectedFile);
 
-      const response = await contributionApi.create(bodyFormData)
-      console.log('reponse', response)
-      if (response) {
-        console.log(response.message)
-        handleToggleReloadContribution()
-      }
+        const response = await contributionApi.create(bodyFormData);
+        if (response) {
+          handleToggleReloadContribution();
+          setShowPopup(false);
+        }
+      };
+
+      handler();
+    } else {
+      alert('Please accept the rules before posting.');
     }
+  };
 
-    handler()
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleOkClick = () => {
+    setShowPopup(false);
+    if (isChecked) {
+      handleUpload();
+    } else {
+      alert('Please accept the rules before posting.');
+    }
+  };
+
+  const handleCancelClick = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -39,7 +60,7 @@ export default function Share({ eventId, handleToggleReloadContribution }) {
             placeholder="Content"
             className="shareInput"
             onChange={(e) => {
-              setContent(e.target.value)
+              setContent(e.target.value);
             }}
           />
         </div>
@@ -51,11 +72,30 @@ export default function Share({ eventId, handleToggleReloadContribution }) {
             </label>
             {selectedFile && <p>Selected file: {selectedFile.name}</p>}
           </div>
-          <div>
-          </div>
-          <button onClick={handleUpload} className="shareButton">Post</button>
+          <button onClick={() => setShowPopup(true)} className="shareButton">Post</button>
         </div>
       </div>
+
+      {/* Popup */}
+      {showPopup && (
+        <div className="popup">
+          <div className="popupContent">
+            <h2>Accept Rules</h2>
+            <label>
+              <input
+                type="checkbox"
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+              />
+              I accept the rules
+            </label>
+            <div className="popupButtons">
+              <button onClick={handleOkClick}>Ok</button>
+              <button onClick={handleCancelClick}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

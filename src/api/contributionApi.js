@@ -36,6 +36,14 @@ const contributionApi = {
             method: "PUT"
         })
         return response
+    },
+    dowload: (eventId) => {
+        const url  = `contributions/download/${eventId}`
+        const response = apiClient({
+            url,
+            method: "GET"
+        })
+        return response
     }
 }
 

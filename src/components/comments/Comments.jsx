@@ -77,7 +77,7 @@ const Comments = ({ contributionId, eventId }) => {
       </div>
       {comments.length > 0 && comments.map((comment) => (
         <div className="comment" key={comment.id}>
-          <img src={comment.commenterPicture} alt="" />
+          <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtoiS5tu5E6Hyf3nFc6zZvq2t2sBcaDZWCKA&s"} alt="" />
           <div className="info">
             <span>{comment.commenterFullName}</span>
             <p>{comment.content}</p>
