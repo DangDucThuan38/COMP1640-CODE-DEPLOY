@@ -44,8 +44,6 @@ function Datatable() {
             <th>Account Status</th>
             <th>Faculty</th>
             <th>Role</th>
-            <th>Status</th>
-              <th>Action</th> 
           </tr>
         </thead>
         <tbody>
@@ -59,8 +57,6 @@ function Datatable() {
               <td>{user.account_status ? 'Active' : 'Inactive'}</td>
               <td>{user.faculty}</td>
               <td>{user.role}</td>
-             
-               
             </tr>
           ))}
         </tbody>
