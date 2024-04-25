@@ -54,7 +54,7 @@ const TableCampaign = () => {
               <td>{formatDateTime(event.due_date)}</td>
               <td>{formatDateTime(event.closure_date)}</td>
               <td>{event.is_enable.toString()}</td>
-              <td>{event.faculty}</td>
+              <td>{event.faculty.name}</td>
               <td>{event.create_by.full_name}</td>
               <td>{event.description}</td>
             </tr>
