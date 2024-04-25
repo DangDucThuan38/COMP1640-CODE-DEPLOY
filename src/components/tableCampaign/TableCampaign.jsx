@@ -45,7 +45,6 @@ const TableCampaign = () => {
             <th>Faculty</th>
             <th>Create By</th>
             <th>Description</th>
-            <th>Action</th>
           </tr>
         </thead>
         <tbody>
