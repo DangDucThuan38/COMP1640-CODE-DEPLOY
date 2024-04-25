@@ -23,13 +23,13 @@ const ForgotPassword = () => {
     }
 
     return (
-        <div className="wrapper">
+        <div className="wrapper_forgotpassword">
             <h1>COMP1640</h1>
             <h6>Please enter your email account</h6>
-            <div className="input-box">
+            <div className="input-box_forgotpassword">
                 <input onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email" required />
             </div>
-            <button onClick={handleSendEmail} >Send new password</button>
+            <button className="button_forgotpassword" onClick={handleSendEmail} >Send new password</button>
         </div>
     )
 }
