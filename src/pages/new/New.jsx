@@ -28,7 +28,7 @@ const New = () => {
   const facultyOptions = [
     { value: "Graphic and Digital Design", label: "Graphic and Digital Design" },
     { value: "IT", label: "IT" },
-    { value: "Graphic and Digital Design", label: "Graphic and Digital Design" }
+    { value: "Business Management", label: "Business Management" }
   ];
 
   const roleOptions = [

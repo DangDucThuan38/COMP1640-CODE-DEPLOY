@@ -1,5 +1,4 @@
 import "./post.css";
-import { MoreVert } from "@material-ui/icons";
 import Comments from "../comments/Comments";
 import { useState } from "react";
 import contributionApi from "../../api/contributionApi";
@@ -52,10 +51,8 @@ export default function Post({ post, eventId, handleToggleReloadContribution }) 
               {post.contributorFullName}
             </span>
           </div>
-          <div className="postTopRight">
-            <span className="postDate">{formatDate(post.date)}</span>
-
-            <MoreVert />
+          <div className="TopRight">
+            <span className="Date">{formatDate(post.date)}</span>
           </div>
         </div>
         <div className="postCenter">

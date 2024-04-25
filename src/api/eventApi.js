@@ -1,7 +1,4 @@
-import axiosClient from "./apiClient";
 import apiClient from "./apiClient";
-
-
 
 const eventApi = {
     getAll: () => {
@@ -14,19 +11,25 @@ const eventApi = {
     },
     update: (id, data) => {
         const url = `events/updateEvent/${id}`;
-        return axiosClient.put(url, data)
+        return apiClient.put(url, data);
     },
-    // delete(userId) {
-
+    // download: (eventId) => {
+    //     const url = `/events/download/${eventId}`;
+    //     return apiClient.get(url, {
+    //         responseType: 'blob'  // Set the responseType to blob
+    //     })
+    //     .then(blob => {
+    //         const url = URL.createObjectURL(blob);
+    //         const a = document.createElement('a');
+    //         a.href = url;
+    //         a.download = 'file.zip';
+    //         a.click();
+    //     })
+    //     .catch(error => {
+    //         console.error('Error downloading file:', error);
+    //     });
     // },
-    // getDetail: (userId) => {
-    //     const url = `/users/view/${userId}`;
-    //     return apiClient.get(url);
-    // }
-
-    // Thêm các phương thức API khác ở đây nếu cần
-}
+    
+};
 
 export default eventApi;
-
-

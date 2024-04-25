@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/no-redundant-roles */
+
 import "./cardEvent.css";
 import { MoreVert } from "@material-ui/icons";
 import Popover from '@mui/material/Popover';
@@ -54,19 +54,45 @@ export default function CardEvent({ event, handleReload }) {
       });
     }
   }
+
+  // const handleDownload = async () => {
+  //   try {
+  //     const response = await eventApi.download(event._id);
+
+  //     if (response) {
+  //       const blob = new Blob([response]);
+  //       const url = URL.createObjectURL(blob);
+  //       const a = document.createElement('a');
+  //       a.href = url;
+  //       a.download = 'file.zip';
+  //       a.click();
+  //     } else {
+  //       console.error('Failed to download');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error downloading file:', error);
+  //     toast.error('Error downloading file', {
+  //       position: "top-right",
+  //       reverseOrder: true,
+  //       duration: 6000,
+  //     });
+  //   }
+  // };
+
+
   function convertDateFormat(isoDate) {
     const date = new Date(isoDate);
-    
+
     const day = String(date.getUTCDate()).padStart(2, '0');
     const month = String(date.getUTCMonth() + 1).padStart(2, '0');
     const year = date.getUTCFullYear();
-    
+
     const hours = String(date.getUTCHours()).padStart(2, '0');
     const minutes = String(date.getUTCMinutes()).padStart(2, '0');
     const seconds = String(date.getUTCSeconds()).padStart(2, '0');
-    
+
     return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
-}
+  }
   return (
     <div className="post">
       <div className="postWrapper">
@@ -140,21 +166,23 @@ export default function CardEvent({ event, handleReload }) {
         </div>
 
         {
-          !isEdit ? <form>
-            <Link 
-              to={{
-                pathname: "/contribution"
-              }}
-              state={{ eventId: event._id }}
-              className="detailButton"
-            >
-              Detail
-            </Link>
-          </form> :
+          !isEdit ? (
+            <form>
+              <Link
+                to={{
+                  pathname: "/contribution"
+                }}
+                state={{ eventId: event._id }}
+                className="detailButton"
+              >
+                Detail
+              </Link>
+              {/* <Button className="saveButton" onClick={handleDownload}>Download all file in event</Button> */}
+            </form>
+          ) : (
             <Button className="saveButton" onClick={handleUpdate}>Save</Button>
+          )
         }
-
-
       </div>
     </div>
   );

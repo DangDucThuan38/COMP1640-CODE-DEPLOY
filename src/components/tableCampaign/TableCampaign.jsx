@@ -42,7 +42,7 @@ const TableCampaign = () => {
             <th>Due Date</th>
             <th>Closure Date</th>
             <th>Is Enable</th>
-            <th>Last Update</th>
+            <th>Faculty</th>
             <th>Create By</th>
             <th>Description</th>
             <th>Action</th>
@@ -56,10 +56,9 @@ const TableCampaign = () => {
               <td>{formatDateTime(event.due_date)}</td>
               <td>{formatDateTime(event.closure_date)}</td>
               <td>{event.is_enable.toString()}</td>
-              <td>{formatDateTime(event.last_update)}</td>
+              <td>{event.faculty}</td>
               <td>{event.create_by.full_name}</td>
               <td>{event.description}</td>
-          
             </tr>
           ))}
         </tbody>

@@ -12,7 +12,7 @@ import { useContext } from "react";
 const checkRole = (role) => {
   switch (role) {
     case 'Admin':
-      return ['Users', 'EventAdmin', 'Profile', 'Logout'];
+      return ['Users', 'EventAdmin', 'Profile', 'Logout','Event'];
     case 'Student':
       return ['Event', 'Profile', 'Logout'];
     case 'Guest':

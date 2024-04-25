@@ -30,7 +30,7 @@ const NewEvent = () => {
   const facultyOptions = [
     { value: "Graphic and Digital Design", label: "Graphic and Digital Design" },
     { value: "IT", label: "IT" },
-    { value: "Business Manager", label: "Business Manager" }
+    { value: "Business Management", label: "Business Management" }
   ];
 
   const [name, setName] = useState('');
