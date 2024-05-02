@@ -5,7 +5,7 @@ import Popover from '@mui/material/Popover';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import 'tippy.js/dist/tippy.css'; // optional
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import eventApi from "../../api/eventApi";
 import toast from 'react-hot-toast';
 
@@ -17,6 +17,16 @@ export default function CardEvent({ event, handleReload }) {
   const [description, setDescription] = useState(event.description)
   const [closureDate, setClosureDate] = useState(event.closure_date)
   const [anchorEl, setAnchorEl] = useState(null);
+  const userRole = sessionStorage.getItem("userRole");
+  const [showDownloadButton, setShowDownloadButton] = useState(false);
+
+  useEffect(() => {
+    if (userRole === "Marketing Manager") {
+      setShowDownloadButton(true);
+    } else {
+      setShowDownloadButton(false);
+    }
+  }, [userRole]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -55,29 +65,32 @@ export default function CardEvent({ event, handleReload }) {
     }
   }
 
-  // const handleDownload = async () => {
-  //   try {
-  //     const response = await eventApi.download(event._id);
+  const handleDownload = async () => {
+    const handleError = (error) => {
+      console.error('Error downloading file:', error);
+      toast.error('Error downloading file', {
+        position: "top-right",
+        reverseOrder: true,
+        duration: 6000,
+      });
+    }
+    try {
+      const blobData = await eventApi.download(event._id);
 
-  //     if (response) {
-  //       const blob = new Blob([response]);
-  //       const url = URL.createObjectURL(blob);
-  //       const a = document.createElement('a');
-  //       a.href = url;
-  //       a.download = 'file.zip';
-  //       a.click();
-  //     } else {
-  //       console.error('Failed to download');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error downloading file:', error);
-  //     toast.error('Error downloading file', {
-  //       position: "top-right",
-  //       reverseOrder: true,
-  //       duration: 6000,
-  //     });
-  //   }
-  // };
+      if (blobData) {
+        const blob = new Blob([blobData]);
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'file.zip';
+        a.click();
+      } else {
+        handleError('Failed to download')
+      }
+    } catch (error) {
+      handleError(error)
+    }
+  };
 
 
   function convertDateFormat(isoDate) {
@@ -177,7 +190,9 @@ export default function CardEvent({ event, handleReload }) {
               >
                 Detail
               </Link>
-              {/* <Button className="saveButton" onClick={handleDownload}>Download all file in event</Button> */}
+              {showDownloadButton && (
+                <Button onClick={handleDownload}>Download Resource</Button>
+              )}
             </form>
           ) : (
             <Button className="saveButton" onClick={handleUpdate}>Save</Button>
