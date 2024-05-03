@@ -79,10 +79,6 @@ const LoginForm = () => {
                     <a href="/forgotPassword">Forgot password?</a>
                 </div>
                 <button className="buttonlogin" type="submit" onClick={handleApi}>Login</button>
-
-                <div className="register-link">
-                    <p>Don't have account? <a href="/Register ">Register</a> </p>
-                </div>
             </form>
         </div>
     )

@@ -6,7 +6,7 @@
   font-size: 14px;
   color: #555;
 
-  .wrapper {
+  .wrapper_page {
     top: 3.3%;
     width: 100%;
     padding: 10px; 
@@ -15,11 +15,9 @@
     justify-content:space-between;
     
 
-    .search {
+    .null {
       display: flex;
       align-items: center;
-      border: 0.5px solid lightgray;
-      padding: 3px;
 
       input {
         border: none;
