@@ -29,7 +29,7 @@ const TableCampaign = () => {
     <div className="datatable-container">
       <h1>Event Data</h1>
       <div className="datatableTitle">
-        <Link to="/event/newevent" className="link">
+        <Link to="/event/edit/0" className="link">
           Add New
         </Link>
       </div>
@@ -44,6 +44,7 @@ const TableCampaign = () => {
             <th>Faculty</th>
             <th>Create By</th>
             <th>Description</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -57,6 +58,10 @@ const TableCampaign = () => {
               <td>{event.faculty.name}</td>
               <td>{event.create_by.full_name}</td>
               <td>{event.description}</td>
+              <td><Link to={`/event/edit/${event._id}`} className="link">
+                Edit
+              </Link></td>
+
             </tr>
           ))}
         </tbody>

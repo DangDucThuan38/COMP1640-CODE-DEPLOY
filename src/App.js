@@ -32,7 +32,7 @@ function App() {
             <Route path="event">
               <Route index element={<Event />} />
               <Route
-                path="newevent"
+                path="edit/:id"
                 element={<NewEvent />}
               />
             </Route>
