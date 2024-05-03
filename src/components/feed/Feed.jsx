@@ -68,10 +68,10 @@ const Feed = ({ eventId }) => {
         ))}
         <div className="pagination">
           <button onClick={handlePrevPage} disabled={currentPage === 1}>
-            Trang trước
+            Prev
           </button>
           <button onClick={handleNextPage} disabled={currentContributions.length < contributionsPerPage}>
-            Trang tiếp theo
+            Next
           </button>
         </div>
       </div>

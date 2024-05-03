@@ -39,15 +39,15 @@ const LoginForm = () => {
 
                 // console.log(result['data']["data"]["role"].name) // Sử dụng giả định, bạn cần thay đổi thành lấy từ dữ liệu API
                 if (role === 'Admin') {
-                    navigate('/campaigns'); // Chuyển hướng đến trang dashboard nếu là admin
+                    navigate('/users'); // Chuyển hướng đến trang dashboard nếu là admin
                 } else if (role === 'Student') {
                     navigate('/event'); // Chuyển hướng đến trang event nếu là user
                 } else if (role === 'Guest') {
-                    navigate('/event'); // Chuyển hướng đến trang event nếu là user
+                    navigate('/home'); // Chuyển hướng đến trang event nếu là user
                 } else if (role === 'Marketing Coordinator') {
-                    navigate('/event'); // Chuyển hướng đến trang event nếu là user
+                    navigate('/home'); // Chuyển hướng đến trang event nếu là user
                 } else if (role === 'Marketing Manager') {
-                    navigate('/event'); // Chuyển hướng đến trang event nếu là user
+                    navigate('/home'); // Chuyển hướng đến trang event nếu là user
                 } else {
                     alert('Unknown role');
                 }
