@@ -41,7 +41,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/home" style={{ textDecoration: "none" }}>
           <span className="logo">COMP1640</span>
         </Link>
       </div>
@@ -50,7 +50,7 @@ const Sidebar = () => {
         <ul>
           <p className="title">MAIN</p>
           {allowedRoutes.includes('Dashboard') && (
-            <Link to="/" style={{ textDecoration: "none" }}>
+            <Link to="/home" style={{ textDecoration: "none" }}>
               <li>
                 <DashboardIcon className="icon" />
                 <span>Dashboard</span>
