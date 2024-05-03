@@ -1,17 +1,18 @@
 .wrapper_login {
     display: flex;
-    justify-content: center; /* Center the form horizontally */
-    align-items: center; /* Center the form vertically */
-    height: 100vh; /* Full viewport height */
-    background-color: #f4f4f4; /* Background color */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-image: url('https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg'); 
+    background-color: #f4f4f4; 
   }
   
   .form_login {
-    background-color: #fff; /* Form background color */
-    padding: 40px; /* Padding around form content */
-    border-radius: 8px; /* Rounded corners */
-    width: 300px; /* Form width */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+    background-color: #f8f8f8; 
+    padding: 40px;
+    border-radius: 8px; 
+    width: 300px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
   }
  h1 {
     color: black;
@@ -26,12 +27,12 @@
 
  .input-box {
     position: relative;
-    width: calc(100% - 40px); /* Để trừ đi kích thước của icon */
+    width: calc(100% - 40px); 
     height: 50px;
     margin: 30px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     border-radius: 10px;
-    padding-right: 40px; /* Thêm padding bên phải để chứa biểu tượng */
+    padding-right: 40px; 
     display: flex;
     align-items: center;
 }

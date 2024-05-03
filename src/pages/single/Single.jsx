@@ -47,7 +47,7 @@ const Single = () => {
                 pathname: "/users/edit",
                 state: { userProfile: userProfile },
               }}
-              className="editButton"
+              className="button_edit"
             >
               Edit
             </Link>
